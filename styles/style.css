@@ -24,4 +24,7 @@
     font-weight: 400;
 }
 
-/* Containers Style */
+/* Primary color */
+.primary-color {
+    color: #1DD100;
+}
