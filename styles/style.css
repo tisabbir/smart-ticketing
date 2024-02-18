@@ -15,3 +15,11 @@
 .inter {
     font-family: "Inter", sans-serif;
   }
+
+/* Paragraph Style */
+
+.para-txt {
+    color: #03071299;
+    font-size: 18px;
+    font-weight: 400;
+}
