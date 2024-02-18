@@ -25,12 +25,28 @@ for(let seat of seats){
 
         // Seat er nam jukto hobe
         let table = document.getElementById('table');
-        let tr = table.insertRow(1);
-        let cell1 = tr.insertCell(0);
-        let cell2 = tr.insertCell(1);
 
-        cell1.innerText = seat.innerText;
-        cell2.innerHTML = '550 TK';
+            let tr = document.createElement('tr');
+            let td1 = document.createElement('td');
+            let td2 = document.createElement('td');
+            let td3 = document.createElement('td');
+
+            td1.innerText = seat.innerText;
+            td2.innerText = '550 Tk';
+            td3.innerText = 'Economy Class';
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            table.appendChild(tr);
+
+        // console.dir(table);
+        // let tr = table.insertRow(1);
+        // let cell1 = tr.insertCell(0);
+        // let cell2 = tr.insertCell(1);
+
+        // cell1.innerText = seat.innerText;
+        // cell2.innerHTML = '550 TK';
 
         // Total Price Update
         count = count + 1;
@@ -78,29 +94,28 @@ function applyCoupon(){
 // Next Button Enabling 
 
 
+// document.addEventListener('mouseover', function(){
+//     const phoneNumber = parseFloat(document.getElementById('phoneNumber').value);
 
-// const phoneNumberBtn = document.getElementById('phoneNumber');
-
-// phoneNumberBtn.addEventListener('click', function(){
-// const phoneNumber = parseFloat(document.getElementById('phoneNumber').value);
-
-// if(phoneNumber>0){
-//     const grandValue = parseFloat(document.getElementById('grand-total').innerText);
-//     if(grandValue>0){
-//         document.getElementById('nextBtn').removeAttribute('disabled');
-//     }   
-// }
+//     if(phoneNumber>0){
+//         const grandValue = parseFloat(document.getElementById('grand-total').innerText);
+//         if(grandValue>0){
+//             document.getElementById('nextBtn').removeAttribute('disabled');
+//         }
+//     }
 // })
 
 
-document.addEventListener('mouseover', function(){
-    const phoneNumber = parseFloat(document.getElementById('phoneNumber').value);
+document.getElementById('phoneNumber').addEventListener('keypress', function(){
+        const phoneNumber = parseFloat(document.getElementById('phoneNumber').value);
 
-    if(phoneNumber>0){
+            
+    if(phoneNumber){
         const grandValue = parseFloat(document.getElementById('grand-total').innerText);
         if(grandValue>0){
             document.getElementById('nextBtn').removeAttribute('disabled');
         }
+    }else{
+
     }
 })
-
