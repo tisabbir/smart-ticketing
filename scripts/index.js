@@ -4,17 +4,15 @@ const seats = seatContainer.getElementsByClassName('btn');
     let count = 0;
 
 for(let seat of seats){
-    seat.addEventListener('click', function(){
+    seat.addEventListener('click', function seatFunction(){
         
         let purchasedSeatNumber = parseInt(document.getElementById('purchased-seat').innerText);
 
         if(purchasedSeatNumber<4){
             
             seat.classList.add('bg-[#1DD100]');
-            
-            this.disabled = true;
 
-            
+
             // Decrease Available SeatNumber
         let seatNumber = parseInt(document.getElementById('available-seat').innerText);
         let updatedSeatNumber = seatNumber -1;
@@ -37,15 +35,18 @@ for(let seat of seats){
         // Total Price Update
         count = count + 1;
         let totalPrice = count * 550;
-        console.log(totalPrice);
         let totalPriceValue = parseInt(document.getElementById('total-price').innerText);
         document.getElementById('total-price').innerText = totalPrice;
 
         // Grand Total Price 
         document.getElementById('grand-total').innerText = totalPrice;
+        } else {
+            alert('You can not buy more than 4 tickets')
         }
+
         
         
+        seat.removeEventListener('click', seatFunction);
     })
 }
 
@@ -53,7 +54,6 @@ for(let seat of seats){
 
 function applyCoupon(){
  const coupon = document.getElementById('coupon').value;
- console.log(coupon);
  
     if(coupon == 'NEW15'){
         let totalPriceValue = parseInt(document.getElementById('total-price').innerText);
@@ -74,3 +74,33 @@ function applyCoupon(){
 
 
 }
+
+// Next Button Enabling 
+
+
+
+// const phoneNumberBtn = document.getElementById('phoneNumber');
+
+// phoneNumberBtn.addEventListener('click', function(){
+// const phoneNumber = parseFloat(document.getElementById('phoneNumber').value);
+
+// if(phoneNumber>0){
+//     const grandValue = parseFloat(document.getElementById('grand-total').innerText);
+//     if(grandValue>0){
+//         document.getElementById('nextBtn').removeAttribute('disabled');
+//     }   
+// }
+// })
+
+
+document.addEventListener('mouseover', function(){
+    const phoneNumber = parseFloat(document.getElementById('phoneNumber').value);
+
+    if(phoneNumber>0){
+        const grandValue = parseFloat(document.getElementById('grand-total').innerText);
+        if(grandValue>0){
+            document.getElementById('nextBtn').removeAttribute('disabled');
+        }
+    }
+})
+
