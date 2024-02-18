@@ -33,3 +33,8 @@
 button:disabled {
   background-color: #1DD100;
 }
+
+#box3 {
+  bottom: -55%;
+  left: -37%;
+}

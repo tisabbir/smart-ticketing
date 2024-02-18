@@ -82,6 +82,8 @@ function applyCoupon(){
 
         document.getElementById('grand-total').innerText = totalPriceValue - discount;
         document.getElementById('gayebulHawa').classList.add('hidden');
+} else {
+    alert('Please Enter A Valid Coupon Code')
 }
 
 
