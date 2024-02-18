@@ -28,3 +28,7 @@
 .primary-color {
     color: #1DD100;
 }
+
+button:disabled {
+  background-color: #1DD100;
+}
