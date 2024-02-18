@@ -8,7 +8,7 @@ for(let seat of seats){
         
         let purchasedSeatNumber = parseInt(document.getElementById('purchased-seat').innerText);
 
-        if(purchasedSeatNumber<4){
+        if(count<4){
             
             seat.classList.add('bg-[#1DD100]');
 
@@ -32,21 +32,13 @@ for(let seat of seats){
             let td3 = document.createElement('td');
 
             td1.innerText = seat.innerText;
-            td2.innerText = '550 Tk';
-            td3.innerText = 'Economy Class';
+            td2.innerText = 'Economy Class';
+            td3.innerText = '550 Tk';
 
             tr.appendChild(td1);
             tr.appendChild(td2);
             tr.appendChild(td3);
             table.appendChild(tr);
-
-        // console.dir(table);
-        // let tr = table.insertRow(1);
-        // let cell1 = tr.insertCell(0);
-        // let cell2 = tr.insertCell(1);
-
-        // cell1.innerText = seat.innerText;
-        // cell2.innerHTML = '550 TK';
 
         // Total Price Update
         count = count + 1;
@@ -58,6 +50,10 @@ for(let seat of seats){
         document.getElementById('grand-total').innerText = totalPrice;
         } else {
             alert('You can not buy more than 4 tickets')
+        }
+
+        if(count === 4){
+            document.getElementById('couponBtn').removeAttribute('disabled');
         }
 
         
